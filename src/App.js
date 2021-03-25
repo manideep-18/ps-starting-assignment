@@ -7,8 +7,10 @@ import Routes from "./Routes";
 class App extends React.Component {
   render() {
     return (
-      <div className="responsiveContainer">
-        <Routes />
+      <div className="mainContainer">
+        <div className="responsiveContainer">
+          <Routes />
+        </div>
       </div>
     );
   }

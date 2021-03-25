@@ -1,8 +1,13 @@
 import React from "react";
+import Header from "../../components/Header";
 
 class HomePage extends React.Component {
   render() {
-    return <div>mani</div>;
+    return (
+      <div>
+        <Header />
+      </div>
+    );
   }
 }
 
