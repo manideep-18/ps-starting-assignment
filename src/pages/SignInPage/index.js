@@ -1,12 +1,13 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { withRouter } from "react-router";
 
 import Header from "../../components/Header";
 
 import "./styles.scss";
 
-const SignupSchema = Yup.object().shape({
+const SigninSchema = Yup.object().shape({
   password: Yup.string()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
@@ -27,9 +28,10 @@ class SignInPage extends React.Component {
                 email: "",
                 password: "",
               }}
-              validationSchema={SignupSchema}
+              validationSchema={SigninSchema}
               onSubmit={(values) => {
                 // same shape as initial values
+                this.props.history.push("/");
                 console.log(values);
               }}
             >
@@ -58,4 +60,4 @@ class SignInPage extends React.Component {
   }
 }
 
-export default SignInPage;
+export default withRouter(SignInPage);
